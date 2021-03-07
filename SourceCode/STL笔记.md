@@ -1,12 +1,14 @@
-string 类型的长度可以用 str.size() 或者 str.length() 来求
+**string 类型的长度可以用 str.size() 或者 str.length() 来求**
 
-vector类型定义的数组的长度只能用 a.size() 来求数组的长度
+**vector类型定义的数组的长度只能用 a.size() 来求数组的长度**
 
-string类型的字符串和==结构体==要用sort(a, a + n)来排序
+**string类型的字符串和==结构体==要用sort(a, a + n)来排序**
 
-vector类型的数组要用迭代器sort(a.begin(), a.end())来排序
+**vector类型的数组要用迭代器sort(a.begin(), a.end())来排序**
 
 
+
+# vector
 
 ## sort函数对一维vector和二维vector排序
 
@@ -59,4 +61,52 @@ int main()
 		return a[0] > b[0]
 });
 ```
+
+# string
+
+## string的insert用法
+```cpp
+//basic_string& insert( size_type index, size_type count, CharT ch );
+//在index位置插入count个字符ch
+
+//1.可以在insert后给一个新的字符串
+string str = "zhy";
+
+string sstr = str.insert(0, 2, '6');
+
+cout << sstr << endl;  //66zhy
+
+//insert完之后str自身也是一样的效果
+string str = "zhy";
+
+str.insert(0, 2, '6');
+
+cout << sstr << endl;   //66zhy
+```
+
+```cpp
+/*会常用到这个插入*/
+//basic_string& insert( size_type index, const CharT* s );
+//index位置插入一个常量字符串
+string str = "zhy";
+
+str.insert(0, "hello~");//要注意第二个参数只能是字符串(""双引号中的常量)
+
+cout << str << endl; //hello~zhy
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
